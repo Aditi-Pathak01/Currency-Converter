@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputBox } from "./components";
 import useCurrInfo from "./hooks/useCurrInfo";
 function App() {
-  let [amount, setAmount] = useState("");
+  let [amount, setAmount] = useState(0);
   let [from, setFrom] = useState("usd");
   let [to, setTo] = useState("inr");
   let [convertedAmt, setConvertedAmt] = useState("");
@@ -24,7 +24,6 @@ function App() {
         <h1 className="text-gray-300 text-[5vw] text-center">Currency Converter</h1>
         <div className="relative w-1/2 h-[40vh] mx-auto flex flex-col justify-center items-center gap-5 p-8 mt-20 rounded-lg border border-gray-400">
           <InputBox
-            placeholder="Amount"
             label="From"
             amount={amount}
             onAmtChange={(amount) => {
